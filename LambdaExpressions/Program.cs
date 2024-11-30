@@ -1,38 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using LambdaExpressions;
 
-double Multiply(double a, double b)
+var cityList = new List<string> { "Berlin", "Nairobi", "Mexico", "Accra" };
+
+var filteredList = ListSelector.FilterByLetter(cityList, (item) => item.StartsWith("N"));
+
+foreach (var item in filteredList)
 {
-    return a * b;
+    Console.WriteLine(item);
 }
-
-CalculateAction MultiplyDelegate = delegate (double a, double b)
-{
-    return a * b;
-};
-
-
-var result1 = DelegateCalculator.Calculate(
-    delegate (double a, double b) { return a + b; }, 
-    4, 5);
-
-// change to lambda expression
-var result2 = DelegateCalculator.Calculate(
-    (double a, double b) => a + b,
-    4, 5);
-
-
-var result3 = DelegateCalculator.Calculate(
-    MultiplyDelegate,4,5);
-
-var result4 = CalculatorFunc.Calculate(
-    (double a, double b) => a - b, 
-      4, 
-      5
-    );
-
-
-Console.WriteLine($"Calculation result: {result1.ToString()}");
-Console.WriteLine($"Calculation result: {result2.ToString()}");
-Console.WriteLine($"Calculation result: {result3.ToString()}");
-Console.WriteLine($"Calculation result: {result4.ToString()}");
