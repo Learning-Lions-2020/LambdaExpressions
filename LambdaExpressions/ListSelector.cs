@@ -1,7 +1,7 @@
 ﻿namespace LambdaExpressions;
 internal static class ListSelector 
 {
-    public static IEnumerable<string> FilterByLetter(IEnumerable<string> list, Func<string, bool> filterFunc)
+    public static IEnumerable<string> FilterByLetter(IEnumerable<string> list, Predicate<string> filterFunc)
     {
         // Create a new list to store the filtered results
         var filteredList = new List<string>();
