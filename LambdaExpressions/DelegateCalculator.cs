@@ -13,3 +13,11 @@ internal static class DelegateCalculator
         return action.Invoke(firstValue, secondValue);
     }
 }
+
+internal static class CalculatorFunc
+{
+    public static double Calculate(Func<double, double, double> action, double firstValue, double secondValue)
+    {
+        return action.Invoke(firstValue, secondValue);
+    }
+}

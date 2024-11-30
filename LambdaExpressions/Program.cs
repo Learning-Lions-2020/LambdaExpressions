@@ -25,5 +25,14 @@ var result2 = DelegateCalculator.Calculate(
 var result3 = DelegateCalculator.Calculate(
     MultiplyDelegate,4,5);
 
+var result4 = CalculatorFunc.Calculate(
+    (double a, double b) => a - b, 
+      4, 
+      5
+    );
+
+
 Console.WriteLine($"Calculation result: {result1.ToString()}");
 Console.WriteLine($"Calculation result: {result2.ToString()}");
+Console.WriteLine($"Calculation result: {result3.ToString()}");
+Console.WriteLine($"Calculation result: {result4.ToString()}");
