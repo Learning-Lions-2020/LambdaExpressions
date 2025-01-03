@@ -6,7 +6,7 @@ namespace LambdaExpressions;
 // and returns a double value
 public delegate double CalculateAction(double firstValue, double secondValue);
 
-internal static class DelegateCalculator
+public static class DelegateCalculator
 {
     public static double Calculate(CalculateAction action, double firstValue, double secondValue)
     {
@@ -14,7 +14,7 @@ internal static class DelegateCalculator
     }
 }
 
-internal static class CalculatorFunc
+public static class CalculatorFunc
 {
     public static double Calculate(Func<double, double, double> action, double firstValue, double secondValue)
     {
